@@ -23,77 +23,29 @@
     </div>
 </nav>
 
+<header class="header">
+	<div class="speedbar">
+		<div class="toptip">
+            <strong class="text-success">当前目录：</strong>
+        </div>
+	</div>
+</header>
+
 <section class="container-fluid">
-    <div class="form-group required">
-        <label class="col-sm-1 control-label cr-group">分类</label>
-        <div class="col-sm-11 cr-group-items">
-            <div class="col-sm-2">
-                <input name="inputType" id="inputTypeIndexIcon" class="magic-radio" value="IndexIcon"
-                        type="radio">
-                <label for="inputTypeIndexIcon">首页Icon</label>
-            </div>
-            <div class="col-sm-2">
-                <input name="inputType" id="inputTypeIndexLogo" class="magic-radio" value="IndexLogo"
-                        type="radio" checked>
-                <label for="inputTypeIndexLogo">首页Logo</label>
-            </div>
-            <div class="col-sm-2">
-                <input name="inputType" id="inputTypeOtherIcon" class="magic-radio" value="OtherIcon"
-                        type="radio">
-                <label for="inputTypeOtherIcon">其它Icon</label>
-            </div>
-            <div class="col-sm-2">
-                <input name="inputType" id="inputTypeOtherLogo" class="magic-radio" value="OtherLogo"
-                        type="radio">
-                <label for="inputTypeOtherLogo">其它Logo</label>
-            </div>
-        </div>
-    </div>
-    <div class="form-group required">
-        <label for="inputHeight" class="col-sm-1 control-label">高度</label>
-        <div class="col-sm-2">
-            <input type="number" id="inputHeight" class="form-control" value="64" min="1" step="1" max="1080"/>
-        </div>
-    </div>
-    <div id="divText" class="form-group required">
-        <label for="inputIconText" class="col-sm-1 control-label">ICON文字</label>
-        <div class="col-sm-2">
-            <input type="text" id="inputIconText" class="form-control" maxlength="2" value=""/>
-        </div>
-        <label id="lblInputLogoText" for="inputLogoText" class="col-sm-1 control-label">Logo文字</label>
-        <div id="divInputLogoText" class="col-sm-2">
-            <input type="text" id="inputLogoText" class="form-control" value=""/>
-        </div>
-        <label id="lblInputLogoDesc" for="inputLogoDesc" class="col-sm-1 control-label">Logo说明</label>
-        <div id="divInputLogoDesc" class="col-sm-2">
-            <input type="text" id="inputLogoDesc" class="form-control" value="by 宇托@yutuo.net"/>
-        </div>
-    </div>
-    <div class="form-group text-center">
-        <button id="makeSvg" type="button" class="btn btn-success">生成</button>
-        <button id="previewSvg" type="button" class="btn btn-success">预览</button>
-        <a id="outputSvg" type="button" class="btn btn-success">导出SVG</a>
-        <a id="outputPng" type="button" class="btn btn-success">导出PNG</a>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-12"><h4>结果</h4></div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-12">
-            <textarea id="htmlReslut" class="form-control" rows="10"></textarea>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-12"><h4>预览</h4></div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-12">
-            <div class="panel panel-default">
-                <div class="panel-body" id="viewResult">
-                </div>
-            </div>
-        </div>
-    </div>
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>文件名</th>
+                <th>大小</th>
+                <th>修改时间</th>
+                <th>权限</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </section>
 
 <footer>
