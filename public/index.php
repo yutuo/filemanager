@@ -18,7 +18,8 @@
         <div class="pull-left" >
             <input name="dirname" type="text" placeholder="输入目录名">
             <button class="btn btn-success">新建</button>
-            <button class="btn btn-primary">上传</button>
+            <button class="btn btn-primary" onclick="$('#uploadFiles').get(0).click();">上传</button>
+            <input id="uploadFiles" type="file" style="display: none" multiple />
         </div>
     </div>
 </nav>
@@ -32,7 +33,6 @@
 </header>
 
 <section class="container-fluid">
-   
     <table class="table">
         <thead>
             <tr>
