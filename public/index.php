@@ -20,6 +20,7 @@
             <button class="btn btn-success">新建</button>
             <button class="btn btn-primary" onclick="$('#uploadFiles').get(0).click();">上传</button>
             <input id="uploadFiles" type="file" style="display: none" multiple />
+            <button class="btn btn-info">登出</button>
         </div>
     </div>
 </nav>

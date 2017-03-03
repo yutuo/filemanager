@@ -10,7 +10,7 @@ body {
   background: #eee;
   color: #5f6468;
   max-width: 1200px;
-  min-width: 340px;
+  min-width: 360px;
   margin: auto;
   font-family: "Microsoft Yahei","メイリオ","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -26,14 +26,14 @@ body {
 }
 
 .navbar .menu {
-  width: 290px;
+  width: 320px;
   margin-right: 20px;
   margin-top: 13px;
   margin-bottom: 13px;
 }
 
 .navbar .menu .btn {
-  padding: 2px 15px;
+  padding: 2px 10px;
   margin-top: -2px;
 }
 
