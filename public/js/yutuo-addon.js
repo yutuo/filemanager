@@ -416,54 +416,47 @@
 })(jQuery);
 
 // ----------------------------------------
-function make_base_auth() {
-  var tok = user + ':' + password;
-  return "Basic " + btoa(tok);
+function make_header_auth() {
+    var userId = localStorage.getItem('userid');
+    var password = localStorage.getItem('password');
+    var tok = userId + ':' + password;
+    return {Authorization: "Basic " + btoa(tok)};
 }
 
 function postData(func, postData, callback) {
     var hashval = window.location.hash.substr(1);
     var postDatas = { 'do': func, 'file': hashval };
     postDatas = Object.assign(postDatas, postData);
-    function make_base_auth(user, password) {
-        var tok = user + ':' + password;
-        var hash = Base64.encode(tok);
-        return "Basic " + hash;
-    }
-    Authorization
-    // .ajax({
-    // url: 'api/outletadd',
-    // type: 'post',
-    // data: { outletname:outletname , addressA:addressA , addressB:addressB, city:city , postcode:postcode , state:state , country:country , menuid:menuid },
-    // headers: {
-    //     authorization: storedJWT
-    // },
-    // dataType: 'json',
-    // success: function (data){
-    //     alert("Outlet Created");
-    // },
-    // error: function (data){
-    //     alert("Outlet Creation Failed, please try again.");        
-    // }
 
-    // });
+    $.ajax({
+        type: 'post',
+        url: 'main.php',
+        data: postDatas,
+        headers: make_header_auth(),
+        dataType: 'json',
+        success: function (data) { callback(data); }
+    });
 }
-
 
 function list() {
-    var hashval = window.location.hash.substr(1);
-    $.post('?', { 'do': 'list', 'file': hashval }, function (data) {
-        $tbody.empty();
-        $('#breadcrumb').empty().html(renderBreadcrumbs(hashval));
-        if (data.success) {
-            $.each(data.results, function (k, v) {
-                $tbody.append(renderFileRow(v));
-            });
-            !data.results.length && $tbody.append('<tr><td class="empty" colspan=5>This folder is empty</td></tr>')
-            data.is_writable ? $('body').removeClass('no_write') : $('body').addClass('no_write');
-        } else {
-            console.warn(data.error.msg);
-        }
-        $('#table').retablesort();
-    }, 'json');
+    postData('list', {}, function (data) {
+        console.log(data);
+    });
+    // var hashval = window.location.hash.substr(1);
+    // $.post('?', { 'do': 'list', 'file': hashval }, function (data) {
+    //     $tbody.empty();
+    //     $('#breadcrumb').empty().html(renderBreadcrumbs(hashval));
+    //     if (data.success) {
+    //         $.each(data.results, function (k, v) {
+    //             $tbody.append(renderFileRow(v));
+    //         });
+    //         !data.results.length && $tbody.append('<tr><td class="empty" colspan=5>This folder is empty</td></tr>')
+    //         data.is_writable ? $('body').removeClass('no_write') : $('body').addClass('no_write');
+    //     } else {
+    //         console.warn(data.error.msg);
+    //     }
+    //     $('#table').retablesort();
+    // }, 'json');
 }
+
+list();
