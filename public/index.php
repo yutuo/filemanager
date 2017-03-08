@@ -14,7 +14,7 @@
     <div class="navbar-header">
         <a class="logo" href="/"><img src="/images/logo.png"/> </a>
     </div>
-    <div class="menu pull-right">
+    <div id="menuButtons" class="menu pull-right" style="display: none">
         <div class="pull-left" >
             <input name="dirname" type="text" placeholder="输入目录名">
             <button class="btn btn-success">新建</button>
@@ -24,30 +24,47 @@
         </div>
     </div>
 </nav>
-
-<header class="header">
-	<div class="speedbar">
-		<div class="toptip">
-            <strong class="text-success">当前目录：</strong>
+<div id="main" style="display: none">
+    <header class="header">
+        <div class="speedbar">
+            <div class="toptip">
+                <strong class="text-success">当前目录：</strong>
+            </div>
         </div>
-	</div>
-</header>
+    </header>
 
-<section class="container-fluid">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>文件名</th>
-                <th>大小</th>
-                <th>修改时间</th>
-                <th>权限</th>
-                <th>操作</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-</section>
+    <section class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>文件名</th>
+                    <th>大小</th>
+                    <th>修改时间</th>
+                    <th>权限</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+</div>
+
+<div id="loginForm">
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+</div>
 
 <footer>
     <div class="footer-inner">

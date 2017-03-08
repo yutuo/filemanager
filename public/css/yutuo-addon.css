@@ -61,5 +61,10 @@ body {
   font-size: smaller;
 }
 
+#loginForm .form-signin {
+  width: 300px;
+  margin: 100px auto;
+}
+
 @media (max-width: 768px) {
 }
